@@ -1,5 +1,4 @@
 import 'package:event_app/screens/myattendance.dart';
-
 import '../screens/signin.dart';
 import '../screens/welcome.dart';
 import '../screens/signup.dart';

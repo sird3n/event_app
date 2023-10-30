@@ -24,6 +24,7 @@ class CustomButton extends StatelessWidget {
     this.padding = const EdgeInsets.symmetric(horizontal: 20.0), required this.width, required this.height,
   }) : super(key: key);
 
+
   const CustomButton.solidOutlineButton({
     Key? key,
     required this.text,

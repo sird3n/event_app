@@ -30,6 +30,7 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
+  form_validator: ">=0.1.1 <2.0.0"
 
 
   # The following adds the Cupertino Icons font to your application.
@@ -37,8 +38,11 @@ dependencies:
   cupertino_icons: ^1.0.2
   firebase_auth: ^4.11.1
   cloud_firestore: ^4.11.0
+  firebase_core: ^2.20.0
 
 dev_dependencies:
+  email_validator: ^2.0.1
+  fluttertoast: ^8.0.8
   flutter_test:
     sdk: flutter
 

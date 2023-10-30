@@ -58,7 +58,7 @@ const kHeaderText = TextStyle(
     fontFamily: 'Neo_Sans_W1G',
     fontSize: 30,
     fontWeight: FontWeight.w100,
-    color: kDarkTextColor);
+    color: kWhiteTextColor);
 
 
 const kButtonStandardLabelTextWhite = TextStyle(

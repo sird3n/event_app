@@ -1,10 +1,9 @@
 import 'package:event_app/screens/myattendance.dart';
-
 import '../theme/theme_colors.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import '../../theme/theme_text_styles.dart';
 import '../../widgets/custom_button.dart';
+import '../../utils/helper_size_widgets.dart';
 import '../nav/routes.dart';
 
 class Home extends StatefulWidget {
@@ -17,17 +16,14 @@ class Home extends StatefulWidget {
 
   @override
   State<Home> createState() => _HomeState();
+
+
 }
 
 class _HomeState extends State<Home> {
 
   int _selectedIndex = 0;
 
-  // Define the tabs and their corresponding icons here
-  final List<Widget> _tabs = [
-    const Placeholder(),
-    const Placeholder()
-  ];
 
   // Define the icons for each tab here
   final List<IconData> _icons = [
@@ -57,42 +53,63 @@ Widget build(BuildContext context) {
       backgroundColor: kAccent,
     ),
 
-    body: Column( // Wrap everything in a Column
-      children: <Widget>[
-        Container(
-          decoration: BoxDecoration(
-            image: DecorationImage(
-              image: AssetImage('assets/images/image 3.png'),
-              fit: BoxFit.fill,
-            ),
-          ),
-          
-          child: Center(
-            child: Text(
-              "Welcome, Audrey",
-              style: kLargeAppTitle,
-              textAlign:TextAlign.left,
-            ),
-            
-          ),
+    body: Container(
+      width: double.infinity,
+      height: double.infinity,
+      decoration: const BoxDecoration(
+        image: DecorationImage(
+          image: AssetImage("assets/images/image 3.jpg"),
+          fit: BoxFit.fill,
         ),
-        CustomButton.solidOutlineButton(
-            text: 'Submit',
-            onPressed: () {
-              //Handle button click
-              //Navigator.pushNamed(context, MyAttend.routeName);
-            },
-            backgroundColor: kAccent,
-            textColor: Colors.white,
-            borderColor: Colors.white,
-            cornerRadius: 20,
-            width: 200,
-            height: 45,
+      ),
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.spaceBetween, // Pushes content to top and bottom
+        children: [
+          Column(
+            children: [
+              addVerticalSpace(40),
+              const Padding(
+                padding: EdgeInsets.symmetric(horizontal: 40),
+                child: Text(
+                  "Welcome, Audrey",
+                  softWrap: true,
+                  style: kLargeLabelText,
+                  textAlign: TextAlign.right,
+                ),
+              ),
+
+              const Padding(
+                padding: EdgeInsets.symmetric(horizontal: 40),
+                child: Text(
+                  "Please mark your attendance today",
+                  softWrap: true,
+                  style: kSemiMediumLabelText,
+                  textAlign: TextAlign.right,
+                ),
+              ),
+ 
+              addVerticalSpace(80),
+
+              CustomButton.defaultButton(
+                text: 'SUBMIT',
+                onPressed: () {
+                  // Handle button click
+                },
+                backgroundColor: kAccent,
+                textColor: Colors.white,
+                borderColor: Colors.white,
+                cornerRadius: 20,
+                width: 300,
+                height: 45,
+              ),
+
+              addVerticalSpace(100),
+
+            ],
           ),
-        Expanded(
-          child: _tabs[_selectedIndex], // Display the tab content
-        ),
-      ],
+
+        ],
+      ),
     ),
     bottomNavigationBar: BottomNavigationBar(
       currentIndex: _selectedIndex,
